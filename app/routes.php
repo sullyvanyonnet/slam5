@@ -4,7 +4,9 @@
 $app->get('/', function() {
 
     require '../src/model.php';
-    $sejours = getAllSejours();
+    require '../src/stpaul/DAO/SejourDAO.php';
+
+    $sejours = findAll();
 
     ob_start();                 // start buffering HTML output
     require '../views/view.php';
